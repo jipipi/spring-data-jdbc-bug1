@@ -17,9 +17,5 @@ package springdata.jdbc.bug;
 
 import org.springframework.data.repository.CrudRepository;
 
-/**
- * Repository for Categories.
- *
- * @author Jens Schauder
- */
+
 interface CarOkRepository extends CrudRepository<CarOk, Long> {}

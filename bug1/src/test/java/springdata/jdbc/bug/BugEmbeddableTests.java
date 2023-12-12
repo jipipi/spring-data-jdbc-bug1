@@ -24,7 +24,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 /**
- * Demonstrates bug on @Embeddable and AuditAware
+ * Demonstrates bug on @Embeddable and Audit annotation + record
  */
 @SpringBootTest(classes = BugConfiguration.class)
 @AutoConfigureJdbc

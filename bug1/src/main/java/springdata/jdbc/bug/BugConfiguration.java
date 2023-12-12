@@ -24,14 +24,7 @@ import org.springframework.data.jdbc.repository.config.EnableJdbcRepositories;
 
 import java.util.Optional;
 
-/**
- * Contains infrastructure necessary for creating repositories, listeners and EntityCallbacks.
- * <p>
- * Not that a listener may change an entity without any problem.
- *
- * @author Jens Schauder
- * @author Mark Paluch
- */
+
 @Configuration
 @EnableJdbcRepositories
 @EnableJdbcAuditing
