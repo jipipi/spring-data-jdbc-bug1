@@ -34,6 +34,8 @@ class BugEmbeddableTests {
     CarRepository repository;
     @Autowired
     CarOkRepository repositoryOk;
+    @Autowired
+    CarClassRepository repositoryClass;
 
     @Test
     void testCar_Ok() {
@@ -65,5 +67,20 @@ class BugEmbeddableTests {
         assertNotNull(carPersisted.userAudit().createdDate());
     }
 
+
+    @Test
+    void testAuditAwareWithEmbedded_Class_KO() {
+        // create some categories
+        var car = repositoryClass.save(new CarClass(null, "MyCar", new UserAuditClass(null, null, null, null)));
+        // save car
+        var carPersisted = repositoryClass.findById(car.id()).orElse(null);
+        assertNotNull(carPersisted);
+        assertNotNull(carPersisted.id());
+        assertEquals("MyCar", carPersisted.name());
+        assertEquals("Bob", carPersisted.userAudit().createdUser());
+        assertEquals("Bob", carPersisted.userAudit().modifiedUser());
+        assertNotNull(carPersisted.userAudit().modifiedDate());
+        assertNotNull(carPersisted.userAudit().createdDate());
+    }
 
 }

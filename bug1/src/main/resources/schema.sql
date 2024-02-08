@@ -6,7 +6,7 @@ CREATE TABLE IF NOT EXISTS Car (
     modified_date  timestamp,
     created_user   varchar(255),
     created_date   timestamp
-remove);
+);
 
 CREATE TABLE IF NOT EXISTS Car_Ok (
                                    id INTEGER IDENTITY PRIMARY KEY,
